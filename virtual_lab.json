@@ -1,0 +1,1729 @@
+[
+    {
+        "id": "c4194addb624b6f8",
+        "type": "tab",
+        "label": "Light dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f680729815a8ad65",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "b05db0ae1156155b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "1",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "89c2cb33dedfeba8",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/1",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "dec382b45a0c84d7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 100,
+        "wires": [
+            [
+                "11945926a3e4d5ed"
+            ]
+        ]
+    },
+    {
+        "id": "11945926a3e4d5ed",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "bc09365f530e1ed2"
+            ],
+            [
+                "ad1afab7a1b9b8ee"
+            ]
+        ]
+    },
+    {
+        "id": "bc09365f530e1ed2",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 60,
+        "wires": [
+            [
+                "f680729815a8ad65"
+            ]
+        ]
+    },
+    {
+        "id": "ad1afab7a1b9b8ee",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 120,
+        "wires": [
+            [
+                "f680729815a8ad65"
+            ]
+        ]
+    },
+    {
+        "id": "ae7859206b2024a3",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "b05db0ae1156155b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "2",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3381e17a872c8504",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/2",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "dec382b45a0c84d7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 220,
+        "wires": [
+            [
+                "e7c0639c28b2856c"
+            ]
+        ]
+    },
+    {
+        "id": "e7c0639c28b2856c",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "ee1d184ed98e2ecd"
+            ],
+            [
+                "a1de19e28948937d"
+            ]
+        ]
+    },
+    {
+        "id": "ee1d184ed98e2ecd",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 180,
+        "wires": [
+            [
+                "ae7859206b2024a3"
+            ]
+        ]
+    },
+    {
+        "id": "a1de19e28948937d",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 240,
+        "wires": [
+            [
+                "ae7859206b2024a3"
+            ]
+        ]
+    },
+    {
+        "id": "45889cceaad748da",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "b05db0ae1156155b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "3",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "e1d3aea52d44f349",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/3",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "dec382b45a0c84d7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 340,
+        "wires": [
+            [
+                "9ce908af7c8320f0"
+            ]
+        ]
+    },
+    {
+        "id": "9ce908af7c8320f0",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "4d1264515b992bc6"
+            ],
+            [
+                "cfe8b649dbe05596"
+            ]
+        ]
+    },
+    {
+        "id": "4d1264515b992bc6",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 300,
+        "wires": [
+            [
+                "45889cceaad748da"
+            ]
+        ]
+    },
+    {
+        "id": "cfe8b649dbe05596",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 360,
+        "wires": [
+            [
+                "45889cceaad748da"
+            ]
+        ]
+    },
+    {
+        "id": "86a5ac04658ff2bb",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "0fe86036f5bf5366",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "4",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "206733467970e6bb",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/4",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "dec382b45a0c84d7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 500,
+        "wires": [
+            [
+                "1f4a0a3df54b17f8"
+            ]
+        ]
+    },
+    {
+        "id": "1f4a0a3df54b17f8",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 500,
+        "wires": [
+            [
+                "81bbbc80992d3459"
+            ],
+            [
+                "b8d54c83b561e717"
+            ]
+        ]
+    },
+    {
+        "id": "81bbbc80992d3459",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 460,
+        "wires": [
+            [
+                "86a5ac04658ff2bb"
+            ]
+        ]
+    },
+    {
+        "id": "b8d54c83b561e717",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 520,
+        "wires": [
+            [
+                "86a5ac04658ff2bb"
+            ]
+        ]
+    },
+    {
+        "id": "746e5a44782a7c5e",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "0fe86036f5bf5366",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "5",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "edf18bf846ff27c3",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/5",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "5535f6f2953b9bf0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 620,
+        "wires": [
+            [
+                "ad749fb251f7c691"
+            ]
+        ]
+    },
+    {
+        "id": "ad749fb251f7c691",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 620,
+        "wires": [
+            [
+                "1c051994c8231a5c"
+            ],
+            [
+                "2127d478077d67e0"
+            ]
+        ]
+    },
+    {
+        "id": "1c051994c8231a5c",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 580,
+        "wires": [
+            [
+                "746e5a44782a7c5e"
+            ]
+        ]
+    },
+    {
+        "id": "2127d478077d67e0",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 640,
+        "wires": [
+            [
+                "746e5a44782a7c5e"
+            ]
+        ]
+    },
+    {
+        "id": "fa85a637ecc46ebb",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "0fe86036f5bf5366",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "6",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "2b9d0cc1bf86af9a",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/6",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "5535f6f2953b9bf0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 740,
+        "wires": [
+            [
+                "3b4f04260a3bcd83"
+            ]
+        ]
+    },
+    {
+        "id": "3b4f04260a3bcd83",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 740,
+        "wires": [
+            [
+                "a51194cfd17b4c4c"
+            ],
+            [
+                "7bfc2f512453ce69"
+            ]
+        ]
+    },
+    {
+        "id": "a51194cfd17b4c4c",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 700,
+        "wires": [
+            [
+                "fa85a637ecc46ebb"
+            ]
+        ]
+    },
+    {
+        "id": "7bfc2f512453ce69",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 760,
+        "wires": [
+            [
+                "fa85a637ecc46ebb"
+            ]
+        ]
+    },
+    {
+        "id": "615cc19ca50b8866",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "2127d59159c47191",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "7",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "4cf524bceb0532d9",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/7",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "5535f6f2953b9bf0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 860,
+        "wires": [
+            [
+                "72a14717b463cd94"
+            ]
+        ]
+    },
+    {
+        "id": "72a14717b463cd94",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 860,
+        "wires": [
+            [
+                "392c0062b424d544"
+            ],
+            [
+                "8ec52bcc063107a0"
+            ]
+        ]
+    },
+    {
+        "id": "392c0062b424d544",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 820,
+        "wires": [
+            [
+                "615cc19ca50b8866"
+            ]
+        ]
+    },
+    {
+        "id": "8ec52bcc063107a0",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 880,
+        "wires": [
+            [
+                "615cc19ca50b8866"
+            ]
+        ]
+    },
+    {
+        "id": "710bb8cc3178266b",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "2127d59159c47191",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "8",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "176d2dd93e5cbf66",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/8",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "5535f6f2953b9bf0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 980,
+        "wires": [
+            [
+                "e16840e5269fa929"
+            ]
+        ]
+    },
+    {
+        "id": "e16840e5269fa929",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 980,
+        "wires": [
+            [
+                "726c2b244ecaf8b9"
+            ],
+            [
+                "e0475f76eddb0ca4"
+            ]
+        ]
+    },
+    {
+        "id": "726c2b244ecaf8b9",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 940,
+        "wires": [
+            [
+                "710bb8cc3178266b"
+            ]
+        ]
+    },
+    {
+        "id": "e0475f76eddb0ca4",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 1000,
+        "wires": [
+            [
+                "710bb8cc3178266b"
+            ]
+        ]
+    },
+    {
+        "id": "ab8daf1e96a57a59",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "2127d59159c47191",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "9",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "bdc97996806ff8df",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/9",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "5535f6f2953b9bf0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 1100,
+        "wires": [
+            [
+                "21dcb89e2ea3ee5e"
+            ]
+        ]
+    },
+    {
+        "id": "21dcb89e2ea3ee5e",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 1100,
+        "wires": [
+            [
+                "56e6ba36f9eadd4b"
+            ],
+            [
+                "91720f37a001b947"
+            ]
+        ]
+    },
+    {
+        "id": "56e6ba36f9eadd4b",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 1060,
+        "wires": [
+            [
+                "ab8daf1e96a57a59"
+            ]
+        ]
+    },
+    {
+        "id": "91720f37a001b947",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 1120,
+        "wires": [
+            [
+                "ab8daf1e96a57a59"
+            ]
+        ]
+    },
+    {
+        "id": "6921ba337ccfdee5",
+        "type": "ui_button",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "508d19239ae6b54c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ON",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "on",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 250,
+        "y": 1480,
+        "wires": [
+            [
+                "c06c9aea22701264",
+                "e73c244644f01f21",
+                "428eca8d219289f9",
+                "3a70a912e451b533",
+                "e5697b7ebb94e862",
+                "684aa89815739bf1",
+                "5dee3da012c1b66f",
+                "af328cd5d19a80b3",
+                "72c1811d878b19b1",
+                "0621c83f6b8f4719",
+                "564dd40f0df55943"
+            ]
+        ]
+    },
+    {
+        "id": "c06c9aea22701264",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 580,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "e73c244644f01f21",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 580,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "428eca8d219289f9",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 580,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "3a70a912e451b533",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/4",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 580,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "e5697b7ebb94e862",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/5",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 580,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "684aa89815739bf1",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/6",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 580,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "5dee3da012c1b66f",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/7",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 580,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "af328cd5d19a80b3",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/8",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 580,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "72c1811d878b19b1",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/9",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 580,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "0621c83f6b8f4719",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/10",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 590,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "63b4324cd803878f",
+        "type": "ui_button",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "508d19239ae6b54c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "OFF",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "off",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 250,
+        "y": 1880,
+        "wires": [
+            [
+                "c06c9aea22701264",
+                "e73c244644f01f21",
+                "428eca8d219289f9",
+                "3a70a912e451b533",
+                "e5697b7ebb94e862",
+                "684aa89815739bf1",
+                "5dee3da012c1b66f",
+                "af328cd5d19a80b3",
+                "72c1811d878b19b1",
+                "0621c83f6b8f4719",
+                "564dd40f0df55943"
+            ]
+        ]
+    },
+    {
+        "id": "6eb5c35146a26650",
+        "type": "function",
+        "z": "c4194addb624b6f8",
+        "name": "function 1",
+        "func": "var msgTempC = msg.payload.tempc;\nmsg.payload = msgTempC;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b697f9f5ace66a2c",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "508d19239ae6b54c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "10",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "2908378fbae46ffa",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/10",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "5535f6f2953b9bf0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 1220,
+        "wires": [
+            [
+                "7256acd05a988389"
+            ]
+        ]
+    },
+    {
+        "id": "7256acd05a988389",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 1220,
+        "wires": [
+            [
+                "895f28958c6742cd"
+            ],
+            [
+                "34314ea6c47a04e7"
+            ]
+        ]
+    },
+    {
+        "id": "895f28958c6742cd",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 1180,
+        "wires": [
+            [
+                "b697f9f5ace66a2c"
+            ]
+        ]
+    },
+    {
+        "id": "34314ea6c47a04e7",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 1240,
+        "wires": [
+            [
+                "b697f9f5ace66a2c"
+            ]
+        ]
+    },
+    {
+        "id": "68a1e02c7e797ba8",
+        "type": "ui_gauge",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "group": "508d19239ae6b54c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "11",
+        "label": "",
+        "format": "Light",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ff0000",
+            "#37ff00",
+            "#37ff00"
+        ],
+        "seg1": "1",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "7f3b3f9b58752f56",
+        "type": "mqtt in",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/11",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "5535f6f2953b9bf0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 1340,
+        "wires": [
+            [
+                "030d4b8ecb32e294"
+            ]
+        ]
+    },
+    {
+        "id": "030d4b8ecb32e294",
+        "type": "switch",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 1340,
+        "wires": [
+            [
+                "8f58bdb08f518c75"
+            ],
+            [
+                "db976e6a4188c1b8"
+            ]
+        ]
+    },
+    {
+        "id": "8f58bdb08f518c75",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1",
+        "output": "str",
+        "x": 640,
+        "y": 1300,
+        "wires": [
+            [
+                "68a1e02c7e797ba8"
+            ]
+        ]
+    },
+    {
+        "id": "db976e6a4188c1b8",
+        "type": "template",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0",
+        "output": "str",
+        "x": 640,
+        "y": 1360,
+        "wires": [
+            [
+                "68a1e02c7e797ba8"
+            ]
+        ]
+    },
+    {
+        "id": "564dd40f0df55943",
+        "type": "mqtt out",
+        "z": "c4194addb624b6f8",
+        "name": "",
+        "topic": "devices/switch/11",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5535f6f2953b9bf0",
+        "x": 590,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "b05db0ae1156155b",
+        "type": "ui_group",
+        "name": "1,2,3",
+        "tab": "e0195c610a0cb746",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dec382b45a0c84d7",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": "",
+        "credentials": {}
+    },
+    {
+        "id": "0fe86036f5bf5366",
+        "type": "ui_group",
+        "name": "4,5,6",
+        "tab": "e0195c610a0cb746",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5535f6f2953b9bf0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": "",
+        "credentials": {}
+    },
+    {
+        "id": "2127d59159c47191",
+        "type": "ui_group",
+        "name": "7,8,9",
+        "tab": "e0195c610a0cb746",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "508d19239ae6b54c",
+        "type": "ui_group",
+        "name": "Buttons",
+        "tab": "e0195c610a0cb746",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e0195c610a0cb746",
+        "type": "ui_tab",
+        "name": "Lights",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
